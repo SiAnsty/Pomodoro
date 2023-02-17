@@ -1,7 +1,6 @@
 import { showTime, startTimer } from "./timer.js";
 import { state } from "./state.js";
 
-
 const btnStart = document.querySelector('.control__btn_start');
 const btnStop = document.querySelector('.control__btn_stop');
 const navigationBtns = document.querySelectorAll('.navigation__btn');
@@ -18,7 +17,7 @@ export const changeActivBtn = (dataUse) => {
   }
 }
 
-const stop = () => {
+export const stop = () => {
   clearTimeout(state.timerId);
   state.isActive = false;
   btnStart.textContent = 'Старт';
@@ -49,5 +48,4 @@ export const initControl = () => {
   }
 
   showTime(state.timeLeft);
-}
-
+};
